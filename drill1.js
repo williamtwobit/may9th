@@ -25,8 +25,10 @@ const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 //    return name[0] === 'R';
 //});
 
-const filteredNames = filter(myNames, ((name) => name[0] === 'R')); 
-console.log(filteredNames); 
+//const filteredNames = filter(myNames, ((name) => name[0] === 'R')); 
+//console.log(filteredNames); 
+
+console.log(filter(myNames, ( name => name[0] === 'R' )));
 //filter(myNames, function(name){}) => console.log(filteredNames) // => ['Rich', 'Ray']
 
 // TASK -- DEFINE YOUR FILTER FUNCTION BELOW:
@@ -40,6 +42,8 @@ function filter(arr, fn) {
 	return retArray;
 
 }
+
+//DRILL 3
 
 function hazardWarningCreator(typeOfWarning){
 	let warningCounter = 0;
@@ -67,5 +71,21 @@ ducksWarning('larry moe and curly road');
 
 iceWarning('reading st');
 iceWarning('highland ave');
+
+// DRILL 4 - TURTLES
+
+let rightMoves = [];
+
+const turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+rightMoves.push(turtleMoves.filter(function (move){ return ((move[0] >= 0) && (move[1] >= 0));} ));
+console.log(...rightMoves);
+
+rightMoves = []; //this might not be necessary, just FYI
+rightMoves.push(turtleMoves.map(move => move[0] + move[1]));
+console.log(...rightMoves); 
+
+rightMoves.forEach( move => console.log(move));
+
 
 
