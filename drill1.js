@@ -41,5 +41,31 @@ function filter(arr, fn) {
 
 }
 
+function hazardWarningCreator(typeOfWarning){
+	let warningCounter = 0;
+	return function(location){
+		let time = "times";
+		warningCounter += 1;
+		if(warningCounter === 1){
+			time = 'time';
+		}
+		console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+		console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${time} today!`);
+	}
+}
+
+const rocksWarning = hazardWarningCreator('rocks on road');
+const ducksWarning = hazardWarningCreator('big ducks all over the road but they\'re cute');
+const iceWarning = hazardWarningCreator('ice on road');
+
+rocksWarning('Harper ave');
+
+ducksWarning('green st');
+ducksWarning('main st');
+ducksWarning('street st');
+ducksWarning('larry moe and curly road');
+
+iceWarning('reading st');
+iceWarning('highland ave');
 
 
